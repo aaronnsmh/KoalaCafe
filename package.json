@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "request": "^2.85.0",
+    "forever": "^0.15.3",
     "0q0-roblox": "^1.6.2"
     
 }
