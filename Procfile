@@ -1,1 +1,1 @@
-worker: forever webhook.js
+worker: forever spamremove.js
