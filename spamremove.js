@@ -1,14 +1,15 @@
 var rbx = require('0q0-roblox'); // roblox-js works fine
 var request = require('request');
+var headers = {
+  "Content-Type": "application/json"
+}
+var username = process.env.name;
+var password = process.env.pass;
 
-var username = 'DutchDeveloperBot';
-var password = 'thats my secret';
-
-var groupId = "2757462"; //"1227618";
+var groupId = process.env.group;
 
 var keywords = [
   "thousands of robux",
-  "thousands",
   "is giving access to",
   "giving access",
   "all game passes",
@@ -41,7 +42,7 @@ rbx.login(username, password).then(function() {
     }
   }).catch(function(e) { console.log(e); });
 
-  var onWallPost = rbx.onWallPost({group: group});
+  var onWallPost = rbx.onWallPost({group: groupId});
   onWallPost.on("data", function(data) {
     var found = 0;
     for (let phase of keywords) {
@@ -51,7 +52,16 @@ rbx.login(username, password).then(function() {
     //  found += 5;
     }
     if (found >= 5) {
-        console.log("Removing post with `" + data.content + "`` content!");
+      var options = {
+  url: "https://discordapp.com/api/webhooks/483736134250266624/yA2Q41Jc7E5p7O-7X_3Vvcw-JH8A47I_mvMYH7_1cEK07BBWPcJ2xuHh3B-AMvEIp9RS",
+  method:  "POST",
+  headers: headers,
+  form: {"content": "Removed Post: **" + data.content + "** Username and ID: **" + data.author.name + " " + data.author.id + "**",
+         "username": "Spam / Scam Removal",
+         "avatar_url": "https://t2.rbxcdn.com/3f4941b2c0ac3eaa81991e2d11a35083"}
+}
+      request(options)
+        console.log(data);
       rbx.deleteWallPost({id:data.id, group:groupId}).catch(function(e) { });
     }
   });
