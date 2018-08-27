@@ -3,8 +3,7 @@ var request = require('request');
 var headers = {
   "Content-Type": "application/json"
 }
-var username = 'AaronnSmh';
-var password = 'Wimpykid7';
+
 
 var groupId = [
   "4184840"
