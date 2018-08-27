@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "spamremove.js",
-  "scripts": {
-    "start": "node spamremove.js"
-  },
   "author": "",
   "license": "ISC",
   "dependencies": {
