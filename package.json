@@ -1,0 +1,17 @@
+{
+  "name": "iBot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "spamremove.js",
+  "scripts": {
+    "start": "node spamremove.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "noblox.js": "^4.1.1",
+    "forever": "^0.15.3",
+    "roblox-js": "^4.0.2",
+    "0q0-roblox": "^1.6.2"
+  }
+}
