@@ -1,14 +1,16 @@
 {
-  "name": "iBot",
+  "name": "webhook",
   "version": "1.0.0",
   "description": "",
   "main": "spamremove.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "noblox.js": "^4.1.1",
-    "forever": "^0.15.3",
-    "roblox-js": "^4.0.2",
+    "request": "^2.85.0",
     "0q0-roblox": "^1.6.2"
-  }
+    
+}
 }
