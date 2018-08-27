@@ -3,11 +3,10 @@ var request = require('request');
 var headers = {
   "Content-Type": "application/json"
 }
+var username = process.env.name;
+var password = process.env.pass;
 
-
-var groupId = [
-  "4184840"
-];
+var groupId = process.env.group;
 
 var keywords = [
   "thousands of robux",
